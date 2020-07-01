@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { Card } from "semantic-ui-react";
 import { useDropzone } from "react-dropzone";
 import axios from "axios";
+import cs from "classnames";
 
 import ModalsContainer from "./components/modals";
 
@@ -17,6 +18,9 @@ const CardContainer = styled.div`
 
 function App() {
   const [user, setUser] = useState(null);
+  const [uploadedFiles, setUploadedFiles] = useState(null);
+  const [previewData, setPreviewData] = useState({});
+  const [isUploading, setIsUploading] = useState(false);
 
   useEffect(() => {
     const currentlyLoggedUser = window.localStorage.getItem("user");
@@ -30,8 +34,15 @@ function App() {
     }
   }, [user]);
 
+  const handleLogOut = () => {
+    window.localStorage.clear();
+
+    setUser(null);
+  };
+
   const onDrop = useCallback(
     (acceptedFiles) => {
+      setIsUploading(true);
       const formData = new FormData();
 
       for (let i = 0; i < acceptedFiles.length; i++) {
@@ -45,39 +56,82 @@ function App() {
           },
         })
         .then((res) => {
-          console.log(res);
+          setIsUploading(false);
         })
         .catch((err) => console.log(err));
     },
     [user]
   );
 
+  useEffect(() => {
+    if (user !== null) {
+      axios
+        .get("http://localhost:8080/uploads", { headers: { user } })
+        .then((v) => {
+          setUploadedFiles(v.data);
+        });
+    }
+  }, [user]);
+
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
 
   return (
-    <Container className="h-screen flex justify-center items-center">
+    <Container className="h-screen flex flex-col justify-center items-center">
       <CardContainer>
         <Card fluid>
           <Card.Content>
-            <Card.Header>Hello, {user}.</Card.Header>
+            <Card.Header>
+              <div className="flex justify-between">
+                <div>Hello, {user}.</div>
+
+                <div
+                  onClick={handleLogOut}
+                  className="text-gray-500 text-sm cursor-pointer"
+                >
+                  Log out
+                </div>
+              </div>
+            </Card.Header>
 
             <Card.Description>
-              <div {...getRootProps()}>
-                <input {...getInputProps()} />
-                {isDragActive ? (
-                  <p>Drop the files here!</p>
-                ) : (
-                  <p>Drag and drop some files here to upload.</p>
-                )}
-              </div>
+              {isUploading ? (
+                <div>Uploading files. Please wait..</div>
+              ) : (
+                <div {...getRootProps()}>
+                  <input {...getInputProps()} />
+
+                  <p className={cs({ "text-green-500": isDragActive })}>
+                    Drag and drop some files here to upload.
+                  </p>
+                </div>
+              )}
             </Card.Description>
           </Card.Content>
           <Card.Content extra>
-            Previously uploaded files
-            <div>
-              <div>file 1</div>
-              <div>file 1</div>
-              <div>file 1</div>
+            <div className="text-black"> Previously uploaded files</div>
+            <div
+              style={{
+                maxHeight: "12rem",
+                overflow: "auto",
+              }}
+            >
+              {uploadedFiles === null ? (
+                <div className="mt-2">Loading files...</div>
+              ) : uploadedFiles.length <= 0 ? (
+                <div>No recently uploaded files.</div>
+              ) : (
+                uploadedFiles.map((v) => (
+                  <div
+                    key={v.file}
+                    onClick={() => {
+                      setPreviewData(v);
+                    }}
+                    className="my-2 cursor-pointer"
+                  >
+                    {v.fileName}
+                  </div>
+                ))
+              )}
             </div>
           </Card.Content>
         </Card>
@@ -87,6 +141,10 @@ function App() {
         loginProps={{
           isLoggedIn: !Boolean(user),
           setUser,
+        }}
+        previewProps={{
+          ...previewData,
+          handlePreviewClose: () => setPreviewData({}),
         }}
       />
     </Container>
