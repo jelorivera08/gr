@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "goreact",
+  "private_key_id": "87c83c9d65a10d48e17cc6edd4ec2aff652d3259",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCiCq7540mJkm1i\nMnYMR8aEXYOWiu1PIbeFCUFQqIFgJR7FkYr6aJDBO1/DUDjxYEDO5yxl/kaRcuMx\n1tSX2P139uV6tGQU7fnly2/oevAWwVdrXdHvnBeu7ovBuTVny+k7+QH5gZzV5Pj7\nyioavPefqDV/J3sjBYlQf1AiG2dYVZwTAcEbSO+Y86lekPPKBB5yMAuvJMKQoWrF\nqSz9ibLFWdkZivRqHb5KP+px3CGxA9yWhRqi+8exSdEmtPZwq06fQx5KpDWJ/JzT\nCbCPfZCR6LEQXaS8sOVh+XJ84eeZQKLjp0PEnco97I+glPJJQsvfekQFigJ13l0F\no70jkaPHAgMBAAECggEAGbsQkJBNkRGLWlh2SPpCGlVZxoHxBOvEXypaZhsb0CSU\n1P0zexKM9IzKZr1KYtR3S2OHYqVp7Ja4X6WkGdNUYcRMKZvozdoBde1EAT/kTU4O\nOkz/lR4i30hJ26KJScjQvxE0sGYAfYaKcuZl9oZN29sIrlRFSAkNBkHxJjlWbmmJ\nBlbACUUsbxi8c+R3FkQOjgDaeZSlLksoAyI0C6nxts8EltDeups7nvhOGNVwNaoN\nP97zTv3AUKgFIMbfEOhKaR5L05Zc/bGg1CVRK4oyjIG7LumwEQ4z0KOjl4QWpwiV\n3/TYH/axzOvkpn1resnaWsHwoSVbo6nfeI5MJhoroQKBgQDM+TuXt5baxc+AevC6\n5DHOB08tTF3bs9TYJXeneqmuKwwu+fvslUqUdMEBhl8k7PhGwlWIpvjNuyjyAScA\n8Q8iA1K0tI/i0J8PxPRw3F2Afds1jF7/i0rplzHJtz3SR1WRbypQumf6ZwyxnMyD\n7+ilFL+qu8J/cVboCkkpgVM+TQKBgQDKYXJM8Y5ztQCmIoumN4NpQvnZormM0jq4\n6XqFRLyX62YEPnPmdFA0s7bOhWUVa5hSYOxqxilebsG1kfT0BydCx5xS+U8/5VFi\nzGYAaI4FWhsA5TDi63JkpdQNQfV4l8RgD+QJQhBghv+1raqI+iKgbiDywUB0/Lfs\nT+7YiSC8YwKBgAlBK4ajHGWOTtsfMeVOTk1eGR4Td51m1jJYJrniGO0rNmaclNpO\nt0pSpzA5b+xL4r3XImOEHnGzhJrAoJEzURqZCc/s4x47iyL8IolB+drGU/Jr/xIM\nqPo5AF96LYlj/SIO4ds5P16X7oPKb5V5bIifkjPUPGjipijd5gXAuBB1AoGBAIpf\n+pEVkLsYhWsSr71ks5tjSgY+tvPMQo5wRW+dwf113HkGYqSt3rFKN7IZjzYILUwW\nLVAMUfjZbeVB+ORph7SnWwF4qXEc0HrnGs8orgKGy3PfQX/GUJ70q3qtILPlwUWV\nV+vkmeIGLA0Cw1mI/egHpMuWywWyTedr9/liOVnVAoGBALyQREESH+fXU23dFyq7\nBcS6bFLMf542gR3aeDhk95XNwXVtwN34lGJdU3VtnfzGNilMW68NkG7mMH3h1cmk\nCBsTK5jt5wGj5Eqovd1PVvMPhVP2QRF2qLAaDndyFJ3GauwqDP2N92Nh29/QGPpl\nJSbsKXuoj3O8tSCt/1GsbPqc\n-----END PRIVATE KEY-----\n",
+  "client_email": "jelo-gr@goreact.iam.gserviceaccount.com",
+  "client_id": "114299008418587692282",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/jelo-gr%40goreact.iam.gserviceaccount.com"
+}
