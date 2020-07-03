@@ -75,7 +75,7 @@
   "scripts": {
     "setup": "yarn && cd server && yarn",
     "test": "node scripts/test.js -- --coverage",
-    "start": "concurrently   \"nodemon server/app.js\" \"node scripts/start.js\"   "
+    "start": "concurrently   \"node server/app.js\" \"node scripts/start.js\"   "
   },
   "eslintConfig": {
     "extends": "react-app"
